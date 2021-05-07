@@ -4,7 +4,7 @@ index = { "0": 31, "1": 32, "2": 33, "3": 34, "4": 35, "5": 36,
          "W": 61, "X": 62, "Y": 63, "Z": 64}
 
 updated_idx = {}
-count = 0
+count = 1
 for key,value in index.items():
     updated_idx.update({key:count})
     count +=1

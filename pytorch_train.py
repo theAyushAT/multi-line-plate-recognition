@@ -35,7 +35,7 @@ if __name__ == '__main__':
         model = nn.DataParallel(model).cuda()
     print('dddddddddddd')
 
-    criterion = nn.CTCLoss()
+    criterion = nn.CTCLoss(blank=0)
 
     # get optimizer
     if opt.optim == "sgd":
