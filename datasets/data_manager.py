@@ -69,14 +69,21 @@ class plateDataset(object):
         pid_container = []
         dataset = []
         for img_path in img_paths:
-            char_lst = list(img_path.split('/',-1)[-1][:-4].upper())
+            char_lst = list(filter(str.isalnum ,img_path.split('/',-1)[-1][:-4].upper()))
             pid = []
             for ch in char_lst:
-                pid.append(index(ch))
-            pid = np.array(pid)
+                pid.append(index[ch])
 
             # print(pid)
-            if len(pid) < 8: continue  # junk images are just ignored
+            if len(pid) < 9 or len(pid) > 11 : continue  # junk images are just ignored
+            if len(pid) == 10 :
+              pid.append(-1)
+
+            elif len(pid) == 9 :
+              pid.append(-1)
+              pid.append(-1)
+              
+            pid = np.array(pid)
             pid_container.append(pid)
             dataset.append((img_path, pid))
 
