@@ -91,7 +91,7 @@ class cls_ctcTrainer:
         log_probs = log_probs.permute(1, 0, 2)
         conv_shape = log_probs.size()
         input_length = torch.full((len(self.data),), int(conv_shape[0]), dtype=torch.long)
-        label_length = torch.full((len(self.data),), 7, dtype=torch.long)
+        label_length = torch.full((len(self.data),), 10, dtype=torch.long)
 
         self.loss = self.criterion(log_probs, self.target, input_length, label_length)
 

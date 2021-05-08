@@ -29,7 +29,7 @@ if __name__ == '__main__':
         pin_memory=pin_memory, drop_last=True
     )
 
-    model = PlateNet(batch_size=opt.train_batch, n_class=66)
+    model = PlateNet(batch_size=opt.train_batch, n_class=36)
     optim_policy = model.get_optim_policy()
     if use_gpu:
         model = nn.DataParallel(model).cuda()

@@ -37,7 +37,7 @@ class DefaultConfig(object):
     
     # miscs
     print_freq = 30
-    eval_step = 50
+    eval_step = 5
     save_dir = './pytorch-ckpt/plate'
     workers = 10
     start_epoch = 0
